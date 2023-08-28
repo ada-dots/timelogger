@@ -49,6 +49,7 @@ namespace Timelogger.Entities
         {
             return new ProjectDTO()
             {
+                Id = Id,
                 CustomerName = Customer.CustomerName,
                 Name = Name,
                 ProjectEndDate = EndDate,

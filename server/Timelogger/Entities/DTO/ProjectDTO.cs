@@ -6,6 +6,7 @@ namespace Timelogger.Entities.DTO
 {
     public class ProjectDTO
     {
+        public int Id { get; internal set; }
         public string Name  { get; internal set; }
         public string CustomerName { get; internal set; }
         public string UserName { get; internal set; }

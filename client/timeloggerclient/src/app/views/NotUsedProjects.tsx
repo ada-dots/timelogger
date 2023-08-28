@@ -1,11 +1,7 @@
-import React, { useState } from "react";
-import ListProjects from "../components/ListProjects";
-import Table from "../components/Table";
-import { Project } from "../models/project.model";
-
+import React from "react";
+import Table from "../components/NotUsedTable";
 
 export default function Projects() {
-    const [projects, setProjects] = useState<Project[]>([]);
 
     return (
         <>
@@ -35,8 +31,6 @@ export default function Projects() {
             </div>
 
             <Table />
-
-            <ListProjects />
         </>
     );
 }
