@@ -17,10 +17,13 @@ namespace Timelogger.Entities
         public string TaskCode { get; set; }
         public bool Default { get; set; } = true;
         public string TaskName { get; set; }
-        public Project Project { get; set; }
+       
         public decimal HourlyRate { get; set; }
         public decimal OverTimeRate { get; set; }
+
+
         public List<Tracking> Trackings { get; set; }
+        public Project Project { get; set; }
 
         internal void WorkToday(double duration, string note = null)
         {

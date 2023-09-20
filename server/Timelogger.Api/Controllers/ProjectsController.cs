@@ -67,7 +67,7 @@ namespace Timelogger.Api.Controllers
             return projects;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{projectId}")]
         public ActionResult<ProjectDTO> GetProjectInfo(int id)
         {
             if (!ValidateUserInformation())
@@ -79,7 +79,7 @@ namespace Timelogger.Api.Controllers
             return prj;
         }
 
-        [HttpGet("{id}/work")]
+        [HttpGet("{projectId}/work")]
         public ActionResult<List<TrackingDTO>> GetWorkReport(int id)
         {
             if (!ValidateUserInformation())
@@ -91,13 +91,13 @@ namespace Timelogger.Api.Controllers
             return report;
         }
 
-        [HttpPost("{id}/work")]
-        public ActionResult WorkOnDefaultTask(int id, double duration)
+        [HttpPost("{projectId}/work")]
+        public ActionResult WorkOnDefaultTask(int projectId, double duration)
         {
             if (!ValidateUserInformation())
                 return Unauthorized();
 
-            if (!_projectManager.TryAddWork(id, CURRENT_USER_ID, duration))
+            if (!_projectManager.TryAddWork(projectId, CURRENT_USER_ID, duration))
                 return UnprocessableEntity();
 
             return Ok();

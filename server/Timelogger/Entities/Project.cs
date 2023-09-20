@@ -31,13 +31,16 @@ namespace Timelogger.Entities
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
         public int UserId {get;set; }
-        public User User { get; set; }
         #endregion
+
 
         public string Name { get; set; }
         public ProjectSTATUS Status { get; set; } = ProjectSTATUS.ACTIVE;
         public DateTime StartDate { get; set; } = DateTime.Now;
         public DateTime EndDate { get; set; }
+
+
+        public User User { get; set; }
         public List<UserTask> Tasks { get; set; } = new List<UserTask>();
 
         internal bool IsOpen()
